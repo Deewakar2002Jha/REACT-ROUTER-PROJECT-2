@@ -1,25 +1,28 @@
-import './App.css'
-import Home from './pages/Home'
-import About from './pages/About'
-import Contact from './pages/Contact'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from './components/Navbar'
+import React from "react";
+import { BrowserRouter, Route, Routes, Link, NavLink } from "react-router";
+import Homecss from "./pages/Homecss";
+import Aboutcss from "./pages/Aboutcss";
+import Contactcss from "./pages/Contactcss";
+import Navbar from "./components/Navbar"
+import Navbar1 from "./components/Navbar1";
+import Navbar2 from "./components/Navbar2";
+import Footer from "./components/Footer";
 
-function App() {
-
-
+const App = () => {
   return (
-    <>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </BrowserRouter>
-    </>
-  )
-}
+    <BrowserRouter>
+      <Navbar1 />
 
-export default App
+      <Routes>
+        <Route path="/" element={<Homecss />} />
+        <Route path="/about" element={<Aboutcss />} />
+        <Route path="/contact" element={<Contactcss />} />
+        <Route path="/contact/121" element={<Contactcss />} />
+      </Routes>
+
+      {/* <Footer /> */}
+    </BrowserRouter>
+  );
+};
+
+export default App;

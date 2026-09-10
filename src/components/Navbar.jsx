@@ -1,26 +1,39 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router";
 
 const Navbar = () => {
     return (
-        <>
-            <nav className='bg-gray-800 px-4 py-4'>
-                <div className="mx-auto flex max-w-7xl items-center justify-between">
-                    <div className='text-2xl font-bold text-white'>Ganpat UNiversity</div>
-                    <div className='flex gap-6'>
-                        <NavLink
-                            to="/" className={({ isActive }) => isActive ? "font-semibold text-blue-400" : "text-gray-300 hover:text-white"}>Home</NavLink>
-                        <NavLink
-                            to="/about" className={({ isActive }) => isActive ? "font-semibold text-blue-400" : "text-gray-300 hover:text-white"}>About</NavLink>
-                        <NavLink
-                            to="/constact" className={({ isActive }) => isActive ? "font-semibold text-blue-400" : "text-gray-300 hover:text-white"}>Contact</NavLink>
-                    </div>
+        <nav className="bg-blue-600 text-white px-6 py-4 shadow-md">
+            <div className="max-w-6xl mx-auto flex items-center justify-between">
+                <h1 className="text-2xl font-bold">
+                    My Website
+                </h1>
+
+                <div className="flex gap-6">
+                    <Link
+                        to="/"
+                        className="hover:text-blue-200 transition"
+                    >
+                        Home
+                    </Link>
+
+                    <Link
+                        to="/about"
+                        className="hover:text-blue-200 transition"
+                    >
+                        About
+                    </Link>
+
+                    <Link
+                        to="/contact"
+                        className="hover:text-blue-200 transition"
+                    >
+                        Contact
+                    </Link>
                 </div>
+            </div>
+        </nav>
+    );
+};
 
-
-            </nav>
-        </>
-    )
-}
-
-export default Navbar
+export default Navbar;
